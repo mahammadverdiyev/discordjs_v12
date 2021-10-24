@@ -1,3 +1,4 @@
+const { Permissions } = require('discord.js');
 const { FLAGS } = Permissions;
 
 module.exports = {
