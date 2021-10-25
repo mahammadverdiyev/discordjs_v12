@@ -2,6 +2,10 @@ const MEMBERS_COUNT_CHANNEL_ID = '880702387751383061'
 const OUR_GUILD_ID = '816271846185500683'
 const Settings = require('../database/models/settings-schema');
 
+// const emoji = ":kekw:";
+
+let emoji = "😎";
+
 module.exports = {
     name: 'ready',
     once: true,
@@ -73,9 +77,9 @@ async function checkBumpDates(client) {
             const notifyAfter = 7200000 - differenceInMs;
 
             if (differenceInMs >= 7200000) {
-                bumpChannel.send(`${pingRole} It's time to bump! 😃`);
+                bumpChannel.send(`${pingRole} It's time to bump! ${emoji}`);
             } else {
-                setTimeout(async () => await bumpChannel.send(`${pingRole} It's time to bump! 😃`), notifyAfter);
+                setTimeout(async () => await bumpChannel.send(`${pingRole} It's time to bump! ${emoji}`), notifyAfter);
             }
         } catch (e) { console.log(e); }
     });

@@ -1,12 +1,13 @@
 module.exports = {
-    name: "stop",
-    aliases: ["disconnect", "leave"],
+    name: "resume",
+    aliases: ["unpause"],
     inVoiceChannel: true,
     async execute(message, args, commandName) {
-        const { client } = message;
+        const{client} = message;
+        
         const queue = client.distube.getQueue(message)
         if (!queue) return message.channel.send(`${client.emotes.error} | There is nothing in the queue right now!`)
-        queue.stop()
-        message.channel.send(`${client.emotes.success} | Stopped!`)
+        queue.resume();
+        message.channel.send("Resumed the song for you :)");
     }
 }

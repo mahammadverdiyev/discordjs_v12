@@ -66,6 +66,8 @@ module.exports = {
                                 return;
                             }
 
+                             const emoji = "😎";
+
                             if (message.channel.id === notifyChannelId) {
                                 message.channel.send('Thank you for bumping the server. Please check back two hours later to bump the server again.')
                             }
@@ -74,7 +76,7 @@ module.exports = {
                                 message.channel.send(`Thank you for bumping the server. You'll be notified in ${notifyChannel}  two hours later to bump the server again.`);
                             }
 
-                            setTimeout(async () => await notifyChannel.send(`${pingRole} It's time to bump! 😃`), 7200000);
+                            setTimeout(async () => await notifyChannel.send(`${pingRole} It's time to bump! ${emoji}`), 7200000);
                             bumpReminderSettings['lastBumped'] = dateBumped;
                             // console.log(client.settings.get(guildId));
 

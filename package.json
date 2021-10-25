@@ -11,11 +11,14 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.6.0",
+    "@discordjs/voice": "^0.6.0",
+    "@distube/spotify": "^1.0.0",
     "@iamtraction/google-translate": "^1.1.2",
     "@mahammadv/stackoverflow_search": "^1.0.0",
     "atob": "^2.1.2",
     "axios": "^0.21.4",
     "canvacord": "^5.2.3",
+    "canvas": "^2.8.0",
     "captcha-canvas": "^2.3.1",
     "cheerio": "^1.0.0-rc.10",
     "discord-buttons": "^4.0.0",
@@ -23,15 +26,16 @@
     "discord-quiz": "^1.0.4",
     "discord-xp": "^1.1.16",
     "discord.js": "^12.5.3",
-    "distube": "^2.8.18",
+    "distube": "^3.0.1",
     "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.4.0",
     "mathjs": "^9.4.4",
     "mongoose": "^5.13.12",
     "node-fetch": "^2.6.1",
     "popcat-wrapper": "^1.4.3",
-    "yt-search": "^2.10.1",
-    "ytdl-core": "^4.9.1"
+    "yt-search": "^2.10.2",
+    "ytdl-core": "^4.9.1",
+    "ytsr": "^3.5.3"
   },
   "devDependencies": {
     "eslint": "^7.31.0"
