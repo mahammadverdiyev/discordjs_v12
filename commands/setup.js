@@ -86,7 +86,7 @@ const handleSetup = async (message, args) => {
             .addField(`❕ Default prefix ${client.defaultPrefixes.get(guildId) || ""}`, 'setup name: \`defaultPrefix\`')
             .addField(`Member counter ${statuses.memberCounter || ""}`, `setup name: \`memberCounter\``)
             .addField('\u200B', '__Moderations__')
-            .addField('📃 Logs Channel', 'COMING SOON')
+            .addField(`📃 Logs Channel ${statuses.logsChannel || ""}`, `setup name: \`logsChannel\``)
             .addField(`👤 Member Role ${statuses.memberRole || ""}`, `setup name: \`memberRole\``)
             .addField(`:zipper_mouth: Mute Role ${statuses.muteRole || ""}`, 'setup name: \`muteRole\`')
             .addField(`😧 Jail Role ${statuses.jailRole || ""}`, 'setup name: \`jailRole\`')
@@ -432,6 +432,30 @@ const setupWelcome = async (message, filter, args) => {
     await setupSetting(message, filter, guideMessage, validate, setupName, setupType);
 }
 
+const setupLogsChannel = async (message,filter, args) =>{
+    const guideMessage = "Specify a channel to send logs";
+    const setupName = "logsChannel";
+    const setupType = "settings";
+
+    const validate = async (repliedMsg) => {
+        const targetChannel = repliedMsg.mentions.channels.first();
+
+        if (!targetChannel) {
+            repliedMsg.channel.send("You didn't specify a channel.");
+            return false;
+        }
+
+        const jsonObject = {
+            date: Date.now(),
+            authorId: message.author.id,
+            active: true,
+            channelId: targetChannel.id,
+        };
+        return jsonObject;
+    }
+    await setupSetting(message, filter, guideMessage, validate, setupName, setupType);
+}
+
 
 
 const setupBumpReminder = async (message, filter, args) => {
@@ -598,12 +622,18 @@ const setupAutoRole = async (message, filter, args) => {
 }
 
 
-const setupSetting = async (message, filter, guideMessage, validate, setupName, setupType) => {
-    const guildId = message.guild.id;
-    const { client } = message;
 
-    if (guideMessage)
-        message.channel.send(guideMessage);
+
+
+
+
+const setupSetting = async (message, filter, guideMessage, validate, setupName, setupType) => {
+if (guideMessage)
+message.channel.send(guideMessage);
+
+const guildId = message.guild.id;
+const { client } = message;
+
 
     let result;
     await message.channel.awaitMessages(filter, { max: 1, time: 60 * 1000, errors: ['time'] })
@@ -666,7 +696,8 @@ const ALL_SETUP = {
     chatBot: setupChatBot,
     antiAd: setupAntiAd,
     memberRole: setupMemberRole,
-    memberCounter: setupMemberCounter
+    memberCounter: setupMemberCounter,
+    logsChannel : setupLogsChannel
 };
 
 
