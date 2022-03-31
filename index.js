@@ -40,7 +40,6 @@ client.memberCounterIntervals = new Discord.Collection();
 client.emotes = config.emoji
 
 
-
 Levels.setURL(`mongodb+srv://discordbot:${process.env.MONGOPAS}@discordbot.hrcdy.mongodb.net/StarGazersBot?retryWrites=true&w=majority`);
 mongoose.init();
 
