@@ -1,7 +1,7 @@
 {
   "name": "stargazersbot",
   "version": "1.0.0",
-  "description": "This is an official repository for StarGazersBot.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -39,18 +39,5 @@
   },
   "devDependencies": {
     "eslint": "^7.31.0"
-  },
-  "engines": {
-    "node": "0.12.0",
-    "npm": "2.5.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mahammadverdiyev/discordjs_v12.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/mahammadverdiyev/discordjs_v12/issues"
-  },
-  "homepage": "https://github.com/mahammadverdiyev/discordjs_v12#readme"
+  }
 }
