@@ -30,10 +30,10 @@
     "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.4.0",
     "mathjs": "^9.4.4",
-    "mongoose": "^5.13.12",
+    "mongoose": "^6.2.9",
     "node-fetch": "^2.6.1",
     "popcat-wrapper": "^1.4.3",
-    "yt-search": "^0.1.1",
+    "yt-search": "^2.10.3",
     "ytdl-core": "^4.9.1",
     "ytsr": "^3.5.3"
   },

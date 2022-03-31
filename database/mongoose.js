@@ -1,21 +1,12 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+
 module.exports = {
     init: async () => {
-        const dbOptions = {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: true,
-            autoIndex: false,
-            poolSize: 5,
-            connectTimeoutMS: 10000,
-            family: 4
-        }
 
-        mongoose.connect(`mongodb+srv://discordbot:${process.env.MONGOPAS}@discordbot.hrcdy.mongodb.net/StarGazersBot?retryWrites=true&w=majority`, dbOptions);
+        mongoose.connect(`mongodb+srv://discordbot:${process.env.MONGOPAS}@discordbot.hrcdy.mongodb.net/StarGazersBot?retryWrites=true&w=majority`);
 
-        mongoose.set('useFindAndModify', false);
         mongoose.Promise = global.Promise;
 
         mongoose.connection.on('connected', () => {

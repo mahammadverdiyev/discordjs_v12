@@ -2,8 +2,6 @@ const MEMBERS_COUNT_CHANNEL_ID = '880702387751383061'
 const OUR_GUILD_ID = '816271846185500683'
 const Settings = require('../database/models/settings-schema');
 
-// const emoji = ":kekw:";
-
 let emoji = "😎";
 
 module.exports = {
